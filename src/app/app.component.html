@@ -1,0 +1,15 @@
+<div style="width: 220px;">
+  <div fxLayout="row" fxLayoutWrap style="padding-bottom: 50px">
+    <div class="card" fxFlex="10%" *ngFor="let square of board;">
+      <div *ngIf="square.bomb == true" fxLayoutAlign="center" style="border: 1px solid black;">
+        B
+      </div>
+      <div *ngIf="square.bomb == false && square.bombsNear > 0" fxLayoutAlign="center" style="border: 1px solid black;">
+        {{square.bombsNear}}
+      </div>
+      <div *ngIf="square.bomb == false && square.bombsNear == 0" fxLayoutAlign="center" style="border: 1px solid black;">
+        &nbsp;
+      </div>
+    </div>
+  </div>
+</div>
